@@ -51,27 +51,6 @@ function Reminders() {
         <Row>
         <Col size="md-3 sm-12">
             <Jumbotron>
-              <h1>Saved Reminders</h1>
-            </Jumbotron>
-            {reminders.length ? (
-              <List>
-                {reminders.map(reminder => (
-                  <ListItem key={reminder._id}>
-                    <Link to={"/reminders/" + reminder._id}>
-                      <strong>
-                        {reminder.title}
-                      </strong>
-                    </Link>
-                    <DeleteBtn onClick={() => deleteReminder(reminder._id)} />
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-              <h3>No Results to Display</h3>
-            )}
-          </Col>
-          <Col size="md-9">
-            <Jumbotron>
               <h1>Reminders</h1>
             </Jumbotron>
             <form>
@@ -92,6 +71,27 @@ function Reminders() {
                 Submit Reminder
               </FormBtn>
             </form>
+          </Col>
+        <Col size="md-9">
+            <Jumbotron>
+              <h1>Saved Reminders</h1>
+            </Jumbotron>
+            {reminders.length ? (
+              <List>
+                {reminders.map(reminder => (
+                  <ListItem key={reminder._id}>
+                    <Link to={"/reminders/" + reminder._id}>
+                      <strong>
+                        {reminder.title}
+                      </strong>
+                    </Link>
+                    <DeleteBtn onClick={() => deleteReminder(reminder._id)} />
+                  </ListItem>
+                ))}
+              </List>
+            ) : (
+              <h3>No Results to Display</h3>
+            )}
           </Col>
         </Row>
       </Container>
