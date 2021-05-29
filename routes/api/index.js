@@ -6,4 +6,4 @@ const notesRoute = require("./notes");
 // Notes routes
 router.use("/notes", notesRoute);
 
-module.exports = router;
+// module.exports = router;
