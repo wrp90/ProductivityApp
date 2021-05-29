@@ -40,9 +40,12 @@ function SignIn() {
               />
             </div>
           </div>
-          <button className="btn btn-success" type="submit">
-            Submit
-          </button>
+          <div className="row">
+            <button className="btn btn-success col col-md-2 offset-md-5" type="submit">
+              Submit
+            </button>
+            <a href="./signup" className="col col-md-1 offset-md-4 text-end">Not a user? Sign up.</a>
+          </div>
         </div>
         </form>
     </div>
