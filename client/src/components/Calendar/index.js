@@ -5,9 +5,9 @@ export default function Results() {
     // set states of calendar date
     const [calDate, setCalDate] = useState(new Date())
 
-    function onChange (calDate) {
+    function onChange(calDate) {
         setCalDate(calDate)
-    
+
         const filteredResults = userResults.filter(result => {
             const newResultFormat = new Date(result.created_at).toLocaleString().split(",")[0]
             const newCalDateFormat = calDate.toLocaleString().split(",")[0]
@@ -21,4 +21,4 @@ export default function Results() {
         </div>
     );
 
-};
+}
