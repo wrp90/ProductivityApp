@@ -18,7 +18,7 @@ function App() {
           <Route exact path={["/notes"]}>
             <Notes />
           </Route>
-          <Route exact path={["/reminder"]}>
+          <Route exact path={["/reminders"]}>
             <Reminders />
           </Route>
           <Route exact path={["/calendar"]}>
