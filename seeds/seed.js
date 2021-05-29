@@ -29,7 +29,7 @@ const notesSeed = [
     }
 ];
 
-db.Book
+db.Notes
     .remove({})
     .then(() => db.Notes.collection.insertMany(notesSeed))
     .then(data => {
