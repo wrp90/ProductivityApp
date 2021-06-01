@@ -5,15 +5,26 @@ const Schema = mongoose.Schema;
 const UserSchema = new Schema({
   username: {
     type: String,
-    unique: true
+    trim: true,
+    required: "Username is Required"
   },
-  email: {
-    type: String,
-    unique: true
-  },
+
   password: {
     type: String,
-    unique: true
+    trim: true,
+    required: "Password is Required",
+    validate: [({ length }) => length >= 6, "Password should be longer."]
+  },
+
+  email: {
+    type: String,
+    unique: true,
+    match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
+  },
+
+  userCreated: {
+    type: Date,
+    default: Date.now
   }
 });
 
