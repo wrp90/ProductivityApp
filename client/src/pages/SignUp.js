@@ -54,7 +54,7 @@ function SignUp() {
                     </div>
                     <button className="btn btn-success" type="submit">
                         SignUp
-          </button>
+                    </button>
                 </div>
             </form>
         </div>
