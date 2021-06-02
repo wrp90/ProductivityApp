@@ -1,15 +1,19 @@
 // import stuff
-import React, {useState} from "react";
+import React, { useState } from "react";
+import { Link, Route, useLocation } from "react-router-dom";
+import SignUp from "./SignUp";
 
 function SignIn() {
-    const [username, setUsername] = useState();
-    const [password, setPassword] = useState();
+  const [username, setUsername] = useState();
+  const [password, setPassword] = useState();
 
   const handleSubmit = e => {
     e.preventDefault();
     console.log("username is " + username);
     console.log("password is " + password);
   };
+
+  const location = useLocation();
 
   return (
     <div>
@@ -44,12 +48,22 @@ function SignIn() {
             <button className="btn btn-success col col-md-2 offset-md-5" type="submit">
               Submit
             </button>
-            <a href="./signup" className="col col-md-1 offset-md-4 text-end">Not a user? Sign up.</a>
+
+            {/* <Link to="./signup" component={SignUp}>Not a user? Sign up.</Link> */}
+            <Link
+              to="/signup"
+              className={location.pathname === "/signup" ? "nav-link active" : "nav-link"}
+            >
+              Not a user? Sign up.
+            </Link>
+            <Route exact path={`/signup`} component={SignUp} />
+
+            {/* <a href="./signup" className="col col-md-1 offset-md-4 text-end"></a> */}
           </div>
         </div>
-        </form>
+      </form>
     </div>
-    )
+  )
 };
 
 export default SignIn;
