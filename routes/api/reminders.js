@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const remindersController = require("../../controllers/remindersController");
 
-// Matches with "/api/notes"
+// Matches with "/api/reminders
 router.route("/")
     .get(remindersController.findAll)
     .post(remindersController.create);
