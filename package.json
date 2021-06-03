@@ -32,6 +32,7 @@
     "axios": "^0.21.1",
     "express": "^4.17.1",
     "if-env": "^1.0.4",
-    "mongoose": "^5.12.11"
+    "mongoose": "^5.12.11",
+    "react-bootstrap": "^1.6.0"
   }
 }

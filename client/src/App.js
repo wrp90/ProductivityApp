@@ -5,6 +5,7 @@ import SignIn from './pages/SignIn';
 import Notes from './pages/Notes';
 import Reminders from './pages/Reminders';
 import Calendar from './pages/Calendar';
+import SignUp from './pages/SignUp';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <div className="App">
         <Navbar />
         <Switch>
-          <Route exact path={["/", "/signin"]}>
+          <Route exact path={["/", "/login"]}>
             <SignIn />
           </Route>
           <Route exact path={["/notes"]}>
@@ -23,6 +24,9 @@ function App() {
           </Route>
           <Route exact path={["/calendar"]}>
             <Calendar />
+          </Route>
+          <Route exact path={["/signup"]}>
+            <SignUp />
           </Route>
         </Switch>
       </div>
