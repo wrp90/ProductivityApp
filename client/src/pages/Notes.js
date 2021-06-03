@@ -9,8 +9,9 @@ import { Modal } from "react-bootstrap"
 
 function Notes() {
   // Setting our component's initial state
-  const [notes, setNotes] = useState([])
-  const [formObject, setFormObject] = useState({})
+  const [notes, setNotes] = useState([]);
+  const [formObject, setFormObject] = useState({});
+  const [activeNote, setActiveNote] = useState({});
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -43,6 +44,24 @@ function Notes() {
     setFormObject({...formObject, [name]: value})
   };
 
+  function links(note) {
+    return (
+      <ListItem key={note._id}>
+        <h5 onClick={() => {noteSet(note._id)}}>
+          {note.title}
+        </h5>
+        <DeleteBtn onClick={() => deleteNote(note._id)} />
+      </ListItem>
+    );
+  }
+
+  function noteSet(event) {
+    API.getNote(event)
+      .then(res => setActiveNote(res.data))
+      .catch(err => console.log(err));
+    handleShow();
+  }
+
   // When the form is submitted, use the API.saveNote method to save the note data
   // Then reload Notes from the database
   function handleFormSubmit(event) {
@@ -66,20 +85,13 @@ function Notes() {
             </Jumbotron>
             {notes.length ? (
               <List>
-                {notes.map(note => (
-                  <ListItem key={note._id}>
-                    <h5 onClick={handleShow}>
-                      {note.title}
-                    </h5>
-                    <Modal show={show} onHide={handleClose}>
-                      <Modal.Header closeButton>
-                        <Modal.Title>{note.title}</Modal.Title>
-                      </Modal.Header>
-                      <Modal.Body>{note.text}</Modal.Body>
-                    </Modal>
-                    <DeleteBtn onClick={() => deleteNote(note._id)} />
-                  </ListItem>
-                ))}
+                {notes.map(links, notes)}
+                <Modal show={show} onHide={handleClose}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>{activeNote.title}</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>{activeNote.text}</Modal.Body>
+                </Modal>
               </List>
             ) : (
               <h3>No Results to Display</h3>
