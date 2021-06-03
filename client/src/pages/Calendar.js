@@ -1,20 +1,32 @@
-import React, { Component } from 'react';
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
+import React, { Component } from "react";
+import { Calendar, momentLocalizer } from "react-big-calendar";
+import moment from "moment";
+import "react-big-calendar/lib/css/react-big-calendar.css";
+
+const localizer = momentLocalizer(moment);
 
 class MyCalendar extends Component {
   state = {
-    date: new Date(),
-  }
-
-  onChange = date => this.setState({ date })
+    events: [
+      {
+        start: moment().toDate(),
+        end: moment()
+          .add(1, "days")
+          .toDate(),
+        title: "testing app"
+      }
+    ]
+  };
 
   render() {
     return (
-      <div className="row">
+      <div className="Calendar">
         <Calendar
-          onChange={this.onChange}
-          value={this.state.date}
+          localizer={localizer}
+          defaultDate={new Date()}
+          defaultView="month"
+          events={this.state.events}
+          style={{ height: "100vh" }}
         />
       </div>
     );
