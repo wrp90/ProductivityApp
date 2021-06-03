@@ -2,15 +2,19 @@ import React, { useState, useEffect } from "react";
 import DeleteBtn from "../components/DeleteBtn";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
-import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
+import { Modal } from "react-bootstrap"
 
 function Notes() {
   // Setting our component's initial state
   const [notes, setNotes] = useState([])
   const [formObject, setFormObject] = useState({})
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   // Load all notes and store them with setNotes
   useEffect(() => {
@@ -64,11 +68,15 @@ function Notes() {
               <List>
                 {notes.map(note => (
                   <ListItem key={note._id}>
-                    <Link to={"/notes/" + note._id}>
-                      <strong>
-                        {note.title}
-                      </strong>
-                    </Link>
+                    <h5 onClick={handleShow}>
+                      {note.title}
+                    </h5>
+                    <Modal show={show} onHide={handleClose}>
+                      <Modal.Header closeButton>
+                        <Modal.Title>{note.title}</Modal.Title>
+                      </Modal.Header>
+                      <Modal.Body>{note.text}</Modal.Body>
+                    </Modal>
                     <DeleteBtn onClick={() => deleteNote(note._id)} />
                   </ListItem>
                 ))}
