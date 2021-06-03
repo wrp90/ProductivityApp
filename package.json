@@ -32,7 +32,9 @@
     "axios": "^0.21.1",
     "express": "^4.17.1",
     "if-env": "^1.0.4",
+    "moment": "^2.29.1",
     "mongoose": "^5.12.11",
+    "react-big-calendar": "^0.33.5",
     "react-bootstrap": "^1.6.0"
   }
 }
