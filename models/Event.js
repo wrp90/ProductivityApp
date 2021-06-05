@@ -2,11 +2,10 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const EventSchema = new Schema({
-    title: string,
+    title: String,
     start: Date,
     end: Date,
-    allDay?: boolean,
-    resource?: any,
+    allDay: Boolean,
   });
 
 const Event = mongoose.model("Event", EventSchema);

@@ -29,7 +29,7 @@ const notesSeed = [
     }
 ];
 
-const userSeed= [
+const userSeed = [
     {
         username: "MasterKeef",
         password: "password123",
@@ -51,7 +51,29 @@ const reminderSeed = [
         text: "this is the content of the remider post (seed)"
 
     }
-]
+];
+
+// const eventSeed = [
+//     {
+//         title: "first event (seed)",
+//         start: "1/4/2021",
+//         end: "1/5/2021",
+//         allday: true,
+
+//     }
+// ];
+
+// db.Event
+//     .remove({})
+//     .then(() => db.Event.collection.insertMany(eventSeed))
+//     .then(data => {
+//         console.log(data.result.n + " records inserted!");
+//         process.exit(0);
+//     })
+//     .catch(err => {
+//         console.error(err);
+//         process.exit(1);
+// });
 
 db.Note
     .remove({})
@@ -88,5 +110,6 @@ db.Reminder
         console.error(err);
         process.exit(1);
 });
+
 
 
