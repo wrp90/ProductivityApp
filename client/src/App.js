@@ -6,6 +6,7 @@ import Notes from './pages/Notes';
 import Reminders from './pages/Reminders';
 import Calendar from './pages/Calendar';
 import SignUp from './pages/SignUp';
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
@@ -13,7 +14,11 @@ function App() {
       <div className="App">
         <Navbar />
         <Switch>
-          <Route exact path={["/", "/login"]}>
+          <Route exact path={["/"]}>
+            <Dashboard />
+          </Route>
+          {/* When signed in ^, when not signed in v, (NOT IMPLEMENTED YET) */}
+          <Route exact path={["/login"]}>
             <SignIn />
           </Route>
           <Route exact path={["/notes"]}>
