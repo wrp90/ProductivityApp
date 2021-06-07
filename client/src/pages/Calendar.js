@@ -3,7 +3,7 @@ import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 
-function MyCalendar (){
+function MyCalendar() {
   const localizer = momentLocalizer(moment);
   const [events, setEvents] = useState([]);
 
@@ -19,21 +19,20 @@ function MyCalendar (){
     }
   }
 
-  
-    return (
-      <div className="Calendar">
-        <Calendar
-          selectable={true}
-          localizer={localizer}
-          defaultDate={new Date()}
-          defaultView="month"
-          events={events}
-          style={{ height: "100vh" }}
-          onSelectEvent={event => alert(event.title)}
-          onSelectSlot={handleSelect}
-        />
-      </div>
-    );
+  return (
+    <div className="Calendar">
+      <Calendar
+        selectable={true}
+        localizer={localizer}
+        defaultDate={new Date()}
+        defaultView="month"
+        events={events}
+        style={{ height: "100vh" }}
+        onSelectEvent={event => alert(event.title)}
+        onSelectSlot={handleSelect}
+      />
+    </div>
+  );
 }
 
 export default MyCalendar;

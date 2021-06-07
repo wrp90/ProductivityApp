@@ -13,7 +13,7 @@ function App() {
       <div className="App">
         <Navbar />
         <Switch>
-          <Route exact path={["/", "/login"]}>
+          <Route exact path={["/", "/signin"]}>
             <SignIn />
           </Route>
           <Route exact path={["/notes"]}>

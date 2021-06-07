@@ -1,5 +1,5 @@
 module.exports = {
-    User: require("./User"),
+    User: require("./user"),
     Note: require("./Note"),
     Reminder: require("./Reminder"),
     Event: require("./Event"),
