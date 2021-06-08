@@ -7,6 +7,32 @@ mongoose.connect(
     "mongodb://localhost/productivityapp"
 );
 
+
+const eventSeed = [
+    {
+        title: "first event (seed)",
+        start: "1/4/2021",
+        end: "1/5/2021",
+        allday: true,
+
+    }
+];
+
+const userSeed = [
+    {
+        username: "MasterKeef",
+        password: "password123",
+        email: "masterkeef34@yahoo.com",
+        userCreated: '5/22/21',
+    },
+    {
+        username: "YoDirt",
+        password: "password333",
+        email: "yodirt@yahoo.com",
+        userCreated: '1/12/21'
+    }
+];
+
 const notesSeed = [
     {
         title: "first post (seed)",
@@ -29,21 +55,6 @@ const notesSeed = [
     }
 ];
 
-const userSeed = [
-    {
-        username: "MasterKeef",
-        password: "password123",
-        email: "masterkeef34@yahoo.com",
-        userCreated: '5/22/21',
-    },
-    {
-        username: "YoDirt",
-        password: "password333",
-        email: "yodirt@yahoo.com",
-        userCreated: '1/12/21'
-    }
-];
-
 const reminderSeed = [
     {
         title: "first reminder (seed)",
@@ -53,31 +64,9 @@ const reminderSeed = [
     }
 ];
 
-// const eventSeed = [
-//     {
-//         title: "first event (seed)",
-//         start: "1/4/2021",
-//         end: "1/5/2021",
-//         allday: true,
-
-//     }
-// ];
-
-// db.Event
-//     .remove({})
-//     .then(() => db.Event.collection.insertMany(eventSeed))
-//     .then(data => {
-//         console.log(data.result.n + " records inserted!");
-//         process.exit(0);
-//     })
-//     .catch(err => {
-//         console.error(err);
-//         process.exit(1);
-// });
-
-db.Note
+db.Event
     .remove({})
-    .then(() => db.Note.collection.insertMany(notesSeed))
+    .then(() => db.Event.collection.insertMany(eventSeed))
     .then(data => {
         console.log(data.result.n + " records inserted!");
         process.exit(0);
@@ -86,6 +75,7 @@ db.Note
         console.error(err);
         process.exit(1);
 });
+
 
 db.User
     .remove({})
@@ -99,9 +89,11 @@ db.User
         process.exit(1);
 });
 
-db.Reminder
+
+
+db.Note
     .remove({})
-    .then(() => db.Reminder.collection.insertMany(reminderSeed))
+    .then(() => db.Note.collection.insertMany(notesSeed))
     .then(data => {
         console.log(data.result.n + " records inserted!");
         process.exit(0);
@@ -113,3 +105,14 @@ db.Reminder
 
 
 
+db.Reminder
+    .remove({})
+    .then(() => db.Reminder.collection.insertMany(reminderSeed))
+    .then(data => {
+        console.log(data.result.n + " records inserted!");
+        process.exit(0);
+    })
+    .catch(err => {
+        console.error(err);
+        process.exit(1);
+});
