@@ -8,32 +8,45 @@ import Calendar from './pages/Calendar';
 import SignUp from './pages/SignUp';
 import Dashboard from "./pages/Dashboard";
 
+const loggedin = true;
+
 function App() {
   return (
     <Router>
       <div className="App">
         <Navbar />
-        <Switch>
-          <Route exact path={["/"]}>
-            <Dashboard />
-          </Route>
-          {/* When signed in ^, when not signed in v, (NOT IMPLEMENTED YET) */}
-          <Route exact path={["/login"]}>
-            <SignIn />
-          </Route>
-          <Route exact path={["/notes"]}>
-            <Notes />
-          </Route>
-          <Route exact path={["/reminders"]}>
-            <Reminders />
-          </Route>
-          <Route exact path={["/calendar"]}>
-            <Calendar />
-          </Route>
-          <Route exact path={["/signup"]}>
-            <SignUp />
-          </Route>
-        </Switch>
+        {loggedin ? (
+          <Switch>
+            <Route exact path={["/"]}>
+              <Dashboard />
+            </Route>
+            {/* When signed in ^, when not signed in v, (NOT IMPLEMENTED YET) */}
+            <Route exact path={["/login"]}>
+              <SignIn />
+            </Route>
+            <Route exact path={["/notes"]}>
+              <Notes />
+            </Route>
+            <Route exact path={["/reminders"]}>
+              <Reminders />
+            </Route>
+            <Route exact path={["/calendar"]}>
+              <Calendar />
+            </Route>
+            <Route exact path={["/signup"]}>
+              <SignUp />
+            </Route>
+          </Switch>
+        ) : (
+          <Switch>
+            <Route exact path={["/", "/login", "/notes", "/reminders", "/calendar"]}>
+              <SignIn />
+            </Route>
+            <Route exact path={["/signup"]}>
+              <SignUp />
+            </Route>
+          </Switch>
+        )}
       </div>
     </Router>
   );
