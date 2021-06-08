@@ -1,15 +1,23 @@
 import React, { useState } from "react";
+import API from "../utils/loginAPI";
 
 function SignUp() {
-    const [name, setName] = useState();
+    const [email, setEmail] = useState();
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log("name is " + name);
+        console.log("email is " + email);
         console.log("username is " + username);
         console.log("password is " + password);
+        API.newUser({
+            email: email,
+            username: username,
+            password: password
+        })
+            .then(res => console.log(res))
+            .catch(err => console.log(err));
     };
 
     return (
@@ -26,7 +34,7 @@ function SignUp() {
                                 type="text"
                                 placeholder="name"
                                 name="name"
-                                onChange={e => setName(e.target.value)}
+                                onChange={e => setEmail(e.target.value)}
                             />
                         </div>
                     </div>
