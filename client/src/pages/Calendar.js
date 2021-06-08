@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import API from "../utils/eventsAPI"
+import API from "../utils/eventsAPI";
 
 function MyCalendar (){
   const localizer = momentLocalizer(moment);
@@ -48,8 +48,9 @@ function MyCalendar (){
           defaultView="month"
           events={events}
           style={{ height: "100vh" }}
-          onSelectEvent={event => alert(event.title)}
+          onSelectEvent={event => alert("Deleting event " + [event.title, deleteEvent(event._id)])}
           onSelectSlot={handleSelect}
+          views={['month','day', 'agenda']}
         />
       </div>
     );
