@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Link, Route, useLocation } from "react-router-dom";
 import SignUp from "./SignUp";
+import API from "../utils/loginAPI";
 
 function SignIn() {
   const [username, setUsername] = useState();
@@ -9,8 +10,15 @@ function SignIn() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log("username is " + username);
-    console.log("password is " + password);
+    API.getUser({
+      username: username
+    })
+      .then(res => {
+        if (res.data[0].password === password) {
+          console.log("this would log you in")
+        }
+      })
+      .catch(err => console.log(err));
   };
 
   const location = useLocation();
