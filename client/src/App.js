@@ -7,6 +7,7 @@ import Reminders from './pages/Reminders';
 import Calendar from './pages/Calendar';
 import SignUp from './pages/SignUp';
 import Dashboard from "./pages/Dashboard";
+import Weather from "./pages/Weather"
 
 const loggedin = true;
 
@@ -35,6 +36,9 @@ function App() {
             </Route>
             <Route exact path={["/signup"]}>
               <SignUp />
+            </Route>
+            <Route exact path={["/weather"]}>
+              <Weather />
             </Route>
           </Switch>
         ) : (
