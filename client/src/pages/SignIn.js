@@ -1,7 +1,5 @@
 // import stuff
 import React, { useState } from "react";
-import { Link, Route, useLocation } from "react-router-dom";
-import SignUp from "./SignUp";
 import API from "../utils/loginAPI";
 
 function SignIn() {
@@ -14,14 +12,13 @@ function SignIn() {
       username: username
     })
       .then(res => {
+        // insert authentication check here
         if (res.data[0].password === password) {
           console.log("this would log you in")
         }
       })
       .catch(err => console.log(err));
   };
-
-  const location = useLocation();
 
   return (
     <div>
@@ -56,17 +53,9 @@ function SignIn() {
             <button className="btn btn-success col col-md-2 offset-md-5" type="submit">
               Submit
             </button>
-
-            {/* <Link to="./signup" component={SignUp}>Not a user? Sign up.</Link> */}
-            <Link
-              to="/signup"
-              className={location.pathname === "/signup" ? "nav-link active" : "nav-link"}
-            >
-              Not a user? Sign up.
-            </Link>
-            <Route exact path={`/signup`} component={SignUp} />
-
-            {/* <a href="./signup" className="col col-md-1 offset-md-4 text-end"></a> */}
+              <a href="/signup">
+                Not a user? Sign up.
+              </a>
           </div>
         </div>
       </form>
