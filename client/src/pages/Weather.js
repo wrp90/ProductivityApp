@@ -40,7 +40,7 @@ function WeatherApp() {
 
 
         $.ajax({
-            url: weatherURL + QUERY + unitsURL + API_KEY,
+            url: weatherURL + QUERY + unitsURL + "&appid=" + API_KEY,
             method: "GET"
         })
             //will grab current weather info and display it on the webpage
@@ -87,7 +87,7 @@ function WeatherApp() {
             })
 
         $.ajax({
-            url: fiveDayForecastURL + QUERY + unitsURL + API_KEY,
+            url: fiveDayForecastURL + QUERY + unitsURL + "&appid=" + API_KEY,
             method: "GET"
         })
             //will grab fiveday weather info and display it on the webpage
@@ -178,7 +178,7 @@ function WeatherApp() {
     }
 
     return (
-        <div style={{backgroundColor:'lightblue', height: '100vh'}}>
+        <div style={{backgroundColor:'lightblue', height: '121vh'}}>
             <div className="col-sm-12 col-md-3 col-lg-3 col-xl-3">
                     <div className="input-group mb-3">
                         <input id="search-input" type="city" name="city" className="form-control"
@@ -191,13 +191,13 @@ function WeatherApp() {
             <div className="row mb-2">
                 <div className="col-8 weather mx-auto">
                     <div className="weather-head">
-                        <h1><span id="location"></span></h1>
+                        <h1 id="h1"><span id="location"></span></h1>
                         <div className="row">
                             <div className="col-6">
                                 <span id="description"></span>
                             </div>
                             <div id="temperature" className="col-6">
-                                <h1><span id="temp"></span>°</h1>
+                                <h1 id="h1"><span id="temp"></span>°</h1>
                             </div>
                         </div>
 
@@ -231,7 +231,7 @@ function WeatherApp() {
 
 
             <div className="card-title">
-                <h1>Five Day Forecast</h1>
+                <h1 id="h1">Five Day Forecast</h1>
             </div>
             <div className="card-deck">
                 <div className="row">
