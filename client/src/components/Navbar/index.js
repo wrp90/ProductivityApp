@@ -31,6 +31,14 @@ export function Navbar(props) {
                                 : "nav-link menu-item btn btn-outline-secondary"
                         }>Calendar</a>
                     </li>
+                    <li className="nav-item">
+                        <a href="/weather" 
+                        className={
+                            window.location.pathname === "/weather"
+                                ? "nav-link active menu-item btn btn-outline-secondary"
+                                : "nav-link menu-item btn btn-outline-secondary"
+                        }>Weather</a>
+                    </li>
                 </ul>
                 <div class="w-100 text-right">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
