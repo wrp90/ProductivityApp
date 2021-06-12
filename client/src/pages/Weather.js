@@ -58,7 +58,7 @@ function WeatherApp() {
                 $("#description").html("<img src='" + iconURL + "'>");
 
                 $.ajax({
-                    url: uvURL + formatUVQuery(currentRes.coord.lon, currentRes.coord.lat) + API_KEY,
+                    url: uvURL + formatUVQuery(currentRes.coord.lon, currentRes.coord.lat) + "&appid=" + API_KEY,
                     method: "GET"
                 })
 
