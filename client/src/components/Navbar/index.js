@@ -15,14 +15,14 @@ export function Navbar(props) {
                                 : "nav-link menu-item btn btn-outline-secondary"
                         }>Notes</a>
                     </li>
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                         <a href="/reminders" 
                         className={
                             window.location.pathname === "/reminders"
                                 ? "nav-link active menu-item btn btn-outline-secondary"
                                 : "nav-link menu-item btn btn-outline-secondary"
                         }>Reminders</a>
-                    </li>
+                    </li> */}
                     <li className="nav-item">
                         <a href="/calendar" 
                         className={
