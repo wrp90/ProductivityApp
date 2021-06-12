@@ -6,6 +6,7 @@ export function Navbar(props) {
             <div className="d-flex flex-grow-1">
                 <span className="w-100 d-lg-none d-block" />
                 <a className="navbar-brand d-none d-lg-inline-block" href="/"> be productive please </a>
+
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav ms-auto">
                         <li className="nav-item">
@@ -42,6 +43,7 @@ export function Navbar(props) {
                         </li>
                     </ul>
                 </div>
+
                 <div class="w-100 text-right">
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>

@@ -124,7 +124,7 @@ function MyCalendar (){
             setEnd(event.end)
             handleShow()
           }}
-          views={['month', 'week','day', 'agenda']}
+          views={['month','day', 'agenda']}
         />
       </div>
     );
