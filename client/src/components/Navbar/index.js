@@ -1,11 +1,12 @@
 import React from 'react';
+import logo from '../../images/logo.png'
 
 export function Navbar(props) {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="d-flex flex-grow-1">
                 <span className="w-100 d-lg-none d-block" />
-                <a className="navbar-brand d-none d-lg-inline-block" href="/"> be productive please </a>
+                <a className="navbar-brand d-none d-lg-inline-block" href="/"> <img src={logo} width="45" height="45"alt="puppy"></img> </a>
 
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav ms-auto">
@@ -17,14 +18,14 @@ export function Navbar(props) {
                                         : "nav-link menu-item btn btn-outline-secondary"
                                 }>Notes</a>
                         </li>
-                        <li className="nav-item">
+                        {/* <li className="nav-item">
                             <a href="/reminders"
                                 className={
                                     window.location.pathname === "/reminders"
                                         ? "nav-link active menu-item btn btn-outline-secondary"
                                         : "nav-link menu-item btn btn-outline-secondary"
                                 }>Reminders</a>
-                        </li>
+                        </li> */}
                         <li className="nav-item">
                             <a href="/calendar"
                                 className={
