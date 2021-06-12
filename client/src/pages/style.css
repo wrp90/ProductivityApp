@@ -20,7 +20,7 @@ body {
   font-family: cursive;
 }
 
-h1, .rbc-toolbar-label{
+h1, .rbc-toolbar-label, title, body{
   color: black
 }
 
