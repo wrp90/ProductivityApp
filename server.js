@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
-const passport = require("passport");
+// const passport = require("passport");
 const PORT = process.env.PORT || 3001;
 
 // Define middleware here
@@ -13,11 +13,11 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
 
-app.use(passport.initialize());
+// app.use(passport.initialize());
 // Add routes, both API and view
 app.use(routes);
 
-passport.use( require("./config/jwtPassportStrategy") );
+// passport.use( require("./config/jwtPassportStrategy") );
 
 
 // Connect to the Mongo DB

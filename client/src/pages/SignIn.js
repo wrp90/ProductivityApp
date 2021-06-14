@@ -14,7 +14,8 @@ function SignIn() {
       .then(res => {
         // insert authentication check here
         if (res.data[0].password === password) {
-          console.log("this would log you in")
+          sessionStorage.setItem('id', res.data[0]._id)
+          return window.location.replace("/");
         }
       })
       .catch(err => console.log(err));

@@ -9,7 +9,13 @@ import SignUp from './pages/SignUp';
 import Dashboard from "./pages/Dashboard";
 import Weather from "./pages/Weather"
 
-const loggedin = true;
+let id = sessionStorage.getItem('id');
+let loggedin;
+if (id) {
+  loggedin = true;
+} else {
+  loggedin = false;
+}
 
 function App() {
   return (
@@ -43,7 +49,7 @@ function App() {
           </Switch>
         ) : (
           <Switch>
-            <Route exact path={["/", "/login", "/notes", "/reminders", "/calendar"]}>
+            <Route exact path={["/", "/login", "/notes", "/reminders", "/calendar", "/weather"]}>
               <SignIn />
             </Route>
             <Route exact path={["/signup"]}>

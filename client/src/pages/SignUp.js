@@ -8,15 +8,12 @@ function SignUp() {
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log("email is " + email);
-        console.log("username is " + username);
-        console.log("password is " + password);
         API.newUser({
             email: email,
             username: username,
             password: password
         })
-            .then(res => console.log(res))
+            .then(res => { return window.location.replace("/login") })
             .catch(err => console.log(err));
     };
 
