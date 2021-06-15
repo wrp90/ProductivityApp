@@ -1,6 +1,11 @@
 import React from 'react';
 import logo from '../../images/logo.png'
 
+function logout() {
+    sessionStorage.clear();
+    return location.reload();
+}
+
 export function Navbar(props) {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -54,7 +59,11 @@ export function Navbar(props) {
             <div className="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
                 <ul className="navbar-nav ms-auto flex-nowrap">
                     <li className="nav-item">
-                        <a href="/login" className="nav-link menu-item nav-active">login or whatever</a>
+                        {!loggedin ? (
+                            <a href="/login" className="nav-link menu-item nav-active">login or whatever</a>
+                        ) : (
+                            <a href={logout} className="nav-link menu-item nav-active">logout or whatever</a>
+                        )}
                     </li>
                 </ul>
             </div>
