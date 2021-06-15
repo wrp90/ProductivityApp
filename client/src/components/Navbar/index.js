@@ -1,14 +1,6 @@
 import React from 'react';
 import logo from '../../images/logo.png'
 
-let id = sessionStorage.getItem('id');
-let loggedin;
-if (id) {
-  loggedin = true;
-} else {
-  loggedin = false;
-};
-
 function logout() {
     sessionStorage.clear();
     return window.location.replace("/");
@@ -67,10 +59,10 @@ export function Navbar(props) {
             <div className="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
                 <ul className="navbar-nav ms-auto flex-nowrap">
                     <li className="nav-item">
-                        {!loggedin ? (
-                            <a href="/login" className="nav-link menu-item nav-active">login or whatever</a>
+                        {!props.loggedin ? (
+                            <a href="/login" className="btn nav-link menu-item nav-active">login or whatever</a>
                         ) : (
-                            <a href={logout} className="nav-link menu-item nav-active">logout or whatever</a>
+                            <button onClick={logout} className="btn nav-link menu-item nav-active">logout or whatever</button>
                         )}
                     </li>
                 </ul>

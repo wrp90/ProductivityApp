@@ -21,13 +21,13 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar />
+        <Navbar loggedin={loggedin} />
         {loggedin ? (
           <Switch>
             <Route exact path={["/"]}>
               <Dashboard />
             </Route>
-            {/* When signed in ^, when not signed in v, (NOT IMPLEMENTED YET) */}
+            {/* When signed in ^, when not signed in v*/}
             <Route exact path={["/login"]}>
               <SignIn />
             </Route>

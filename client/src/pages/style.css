@@ -2,7 +2,7 @@
 ::after,
 ::before {
   box-sizing: border-box;
-  font-family: cursive;
+  font-family: 'Georgia', sans-serif;
 }
 
 body {
@@ -17,7 +17,7 @@ body {
 #h1 {
   color: white;
   font-size: 30px;
-  font-family: cursive;
+  font-family: 'Georgia', sans-serif;
 }
 
 h1, .rbc-toolbar-label, title, body{
