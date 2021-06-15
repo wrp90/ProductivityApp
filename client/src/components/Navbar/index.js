@@ -1,10 +1,18 @@
 import React from 'react';
 import logo from '../../images/logo.png'
 
+let id = sessionStorage.getItem('id');
+let loggedin;
+if (id) {
+  loggedin = true;
+} else {
+  loggedin = false;
+};
+
 function logout() {
     sessionStorage.clear();
-    return location.reload();
-}
+    return window.location.replace("/");
+};
 
 export function Navbar(props) {
     return (
