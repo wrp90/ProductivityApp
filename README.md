@@ -17,6 +17,11 @@ for local weather conditions on the weather tab.
 https://sheltered-everglades-90056.herokuapp.com/
 
 ## Screen Shot
-
+![Screen Shot 2021-06-14 at 7 02 41 PM](https://user-images.githubusercontent.com/70343136/121973691-72f39100-cd43-11eb-8f55-5e45ea71369d.png)
+![Screen Shot 2021-06-14 at 7 02 34 PM](https://user-images.githubusercontent.com/70343136/121973696-7424be00-cd43-11eb-8f07-d5271b831dec.png)
+![Screen Shot 2021-06-14 at 7 01 47 PM](https://user-images.githubusercontent.com/70343136/121973704-76871800-cd43-11eb-909f-01389f7f8d07.png)
+![Screen Shot 2021-06-14 at 7 02 01 PM](https://user-images.githubusercontent.com/70343136/121973702-75ee8180-cd43-11eb-9f2e-79829f2ca343.png)
+![Screen Shot 2021-06-14 at 7 02 13 PM](https://user-images.githubusercontent.com/70343136/121973701-7555eb00-cd43-11eb-8e49-47ef17d7bf83.png)
+![Screen Shot 2021-06-14 at 7 02 27 PM](https://user-images.githubusercontent.com/70343136/121973698-7424be00-cd43-11eb-82d2-e59fce886bbb.png)
 
 
