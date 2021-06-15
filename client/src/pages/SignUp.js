@@ -29,8 +29,8 @@ function SignUp() {
                             <input
                                 className="form-control"
                                 type="text"
-                                placeholder="name"
-                                name="name"
+                                placeholder="email"
+                                name="email"
                                 onChange={e => setEmail(e.target.value)}
                             />
                         </div>
