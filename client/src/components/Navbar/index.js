@@ -11,7 +11,7 @@ if (id) {
 
 function logout() {
     sessionStorage.clear();
-    return window.location.replace("/login");
+    return window.location.replace("/");
 };
 
 export function Navbar(props) {
