@@ -146,3 +146,11 @@ h1, .rbc-toolbar-label, title, body{
     background-color: purple;
     color: white;
 }
+
+div.col-sm-12{
+  padding: 0 !important;
+}
+
+h1.w-100{
+  margin: 0 !important;
+}
