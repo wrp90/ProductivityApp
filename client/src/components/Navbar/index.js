@@ -8,7 +8,7 @@ function logout() {
 
 export function Navbar(props) {
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark w-100">
             <div className="d-flex flex-grow-1">
                 <span className="w-100 d-lg-none d-block" />
                 <a className="navbar-brand d-none d-lg-inline-block" href="/"> <img src={logo} width="45" height="45"alt="puppy"></img> </a>
